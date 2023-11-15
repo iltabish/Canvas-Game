@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Canvas-Game</title>
+</head>
+<body> 
+    <div id="main" tabindex="0" class="smiley-face">
+        <div class="eyes left"></div>
+        <div class="eyes right"></div>
+        <div class="mouth"></div>
+    </div>
+      <script>
+          document.getElementById('main').addEventListener('keydown',function(event){
+          if(event.key=='ArrowLeft'){
+            moveLeft();
+          } else if(event.key=='ArrowRight'){
+            moveRight();
+          }else if(event.key=='ArrowUp'){
+            moveTop();
+          }else if(event.key=='ArrowDown'){
+            moveBottom();
+          }
+        })
+
+       function moveLeft(){
+        var element=document.getElementById('main');
+        var currentPosition=parseInt(window.getComputedStyle(element).left) || 0;
+        var newPosition=currentPosition-50;
+
+        element.style.left=newPosition+'px';
+       }
+       function moveRight(){
+        var element=document.getElementById('main');
+        var currentPosition=parseInt(window.getComputedStyle(element).left) || 0;
+        var newPosition=currentPosition+50;
+
+        element.style.left=newPosition+'px';
+       }
+       function moveTop(){
+        var element=document.getElementById('main');
+        var currentPosition=parseInt(window.getComputedStyle(element).top) || 0;
+        var newPosition=currentPosition-50;
+
+        element.style.top=newPosition+'px';
+       }
+       function moveBottom(){
+        var element=document.getElementById('main');
+        var currentPosition=parseInt(window.getComputedStyle(element).top) || 0;
+        var newPosition=currentPosition+50;
+
+        element.style.top=newPosition+'px';
+       }
+      </script>
+</body>
+</html>
